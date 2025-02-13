@@ -125,10 +125,13 @@ git init
 git remote add origin https://github.com/hakeematyab/Reliable-Explainable-Brain-Tumor-Segmentation.git
 
 # Pull the latest changes from the repository
-git pull origin master
+git pull
 
 # (Based on the need) Create a new branch for your changes
 git checkout -b feature-branch
+
+# (OR) Checkout to the main branch
+git checkout main
 
 # Add your changes
 git add .
