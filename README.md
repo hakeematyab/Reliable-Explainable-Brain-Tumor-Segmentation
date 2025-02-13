@@ -140,7 +140,7 @@ git add .
 git commit -m "Added feature XYZ"
 
 # Push your changes to the remote repository
-git push origin feature-branch
+git push
 
 # (Based on the need) Create a pull request from GitHub UI and request review
 ```
