@@ -41,6 +41,7 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#git-contribution-guide">Git Contribution Guide</a></li>
     <li><a href="#git-setup-on-slurm-hpc">Git Contribution Guide</a></li>
+    <li><a href="#register-environment-to-kernel">Git Contribution Guide</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -103,8 +104,8 @@ BrainTumorSegmentation/
    ```
 2. Create an environment & install dependencies:
    ```sh
-   conda create --name brain_tumor_segmentation python=3.12.9
-   conda activate brain_tumor_segmentation
+   conda create --name BTSeg python=3.12.9
+   conda activate BTSeg
    pip install -r requirements.txt
    ```
 -->
@@ -190,6 +191,21 @@ Hi <your-username>! You've successfully authenticated, but GitHub does not provi
 ##### **Set Remote to Use SSH**
 ```bash
 git remote set-url origin git@github.com:hakeematyab/Reliable-Explainable-Brain-Tumor-Segmentation.git
+```
+
+## Register Environment to Kernel
+
+1. Activate the environment.
+```sh
+   conda activate BTSeg
+```
+2. Install jupyter and ipykernel.
+```sh
+   pip install jupyter ipykernel
+```
+3. Register the environment to jupyter kernel.
+```sh
+   python -m ipykernel install --user --name=BTSeg --display-name "Python BTSeg" 
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
