@@ -24,8 +24,9 @@ def download_kaggle_dataset(dataset_name, download_path="./data"):
         os.chmod(kaggle_json_path, 0o600)
 
     os.makedirs(download_path, exist_ok=True)
-    import kaggle
-    kaggle.api.dataset_download_files(dataset_name, path=download_path, unzip=True)
+    import kagglehub
+    kagglehub.dataset_download(dataset_name)
+    
 
 if __name__ == "__main__":
     """
