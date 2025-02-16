@@ -149,13 +149,13 @@ git push
 
 ## Git Setup on SLURM HPC
 
-### 1️⃣ Configure Git Username & Email
+### Configure Git Username & Email
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
 ```
 
-### 2️⃣ Authenticate with GitHub/GitLab on SLURM HPC
+### Authenticate with GitHub/GitLab on SLURM HPC
 Since password authentication is no longer supported for GitHub/GitLab, follow the following method.
 
 #### SSH Authentication**
