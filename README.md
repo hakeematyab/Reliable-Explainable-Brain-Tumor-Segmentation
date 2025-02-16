@@ -40,6 +40,7 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#git-contribution-guide">Git Contribution Guide</a></li>
+    <li><a href="#git-setup-on-slurm-hpc">Git Contribution Guide</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -145,7 +146,54 @@ git push
 # (Based on the need) Create a pull request from GitHub UI and request review
 ```
 
+## Git Setup on SLURM HPC
+
+### 1️⃣ Configure Git Username & Email
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+### 2️⃣ Authenticate with GitHub/GitLab on SLURM HPC
+Since password authentication is no longer supported for GitHub/GitLab, follow the following method.
+
+#### SSH Authentication**
+
+##### **Generate an SSH Key**
+```bash
+ssh-keygen -t ed25519 -C "your.email@example.com"
+```
+Press **Enter** for the default location (`~/.ssh/id_ed25519`) and other prompts.
+
+##### **Add the Key to SSH Agent**
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
+
+##### **Copy and Add the SSH Key to GitHub/GitLab**
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+Go to **GitHub** → Settings → SSH and GPG Keys → New SSH Key.
+Paste the key and save it.
+
+##### **Test SSH Connection**
+```bash
+ssh -T git@github.com
+```
+It should return:
+```vbnet
+Hi <your-username>! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+##### **Set Remote to Use SSH**
+```bash
+git remote set-url origin git@github.com:hakeematyab/Reliable-Explainable-Brain-Tumor-Segmentation.git
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- LICENSE -->
 ## License
