@@ -1,7 +1,7 @@
 import os
 import json
 
-def download_kaggle_dataset(dataset_name, download_path="./data"):
+def download_kaggle_dataset(dataset_name):
     """
     Downloads a dataset from Kaggle after prompting the user for an API key.
 
@@ -23,7 +23,6 @@ def download_kaggle_dataset(dataset_name, download_path="./data"):
             json.dump({"username": username, "key": api_key}, f)
         os.chmod(kaggle_json_path, 0o600)
 
-    os.makedirs(download_path, exist_ok=True)
     import kagglehub
     kagglehub.dataset_download(dataset_name)
     
@@ -39,4 +38,4 @@ if __name__ == "__main__":
     
     When prompted, enter your Kaggle username and API key.
     """
-    download_kaggle_dataset("dschettler8845/brats-2021-task1", "./data/brats2021")
+    download_kaggle_dataset("dschettler8845/brats-2021-task1")
