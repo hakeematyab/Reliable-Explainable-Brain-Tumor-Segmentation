@@ -202,10 +202,13 @@ git remote set-url origin git@github.com:hakeematyab/Reliable-Explainable-Brain-
 2. Install jupyter and ipykernel.
 ```sh
    pip install jupyter ipykernel
+   # If the correct kernel doesn't load
+   pip install --force-reinstall jupyter
+   pip install --force-reinstall ipykernel
 ```
 3. Register the environment to jupyter kernel.
 ```sh
-   python -m ipykernel install --user --name=BTSeg --display-name "Python BTSeg" 
+   python -m ipykernel install --user --name=BTSeg --display-name "Python-BTSeg" 
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
