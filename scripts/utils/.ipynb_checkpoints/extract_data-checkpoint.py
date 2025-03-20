@@ -38,7 +38,7 @@ if __name__ == "__main__":
     """
     tar_file_path = "/home/hakeem.at/.cache/kagglehub/datasets/dschettler8845/brats-2021-task1/versions/1/BraTS2021_Training_Data.tar"
     destination_path = "./data/brats2021"
-    fraction = 0.3
+    fraction = 0.7
     try:
         extract_tar_file(tar_file_path, destination_path, fraction)
     except Exception as e:
