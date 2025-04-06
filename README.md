@@ -5,12 +5,11 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/hakeematyab/Reliable-Explainable-Brain-Tumor-Segmentation">
-    <img src="https://github.com/user-attachments/assets/b8111a77-4f32-4fc4-abb1-a9888fc38c7b" alt="Logo" width="400" height="350">
+    <img src="https://github.com/user-attachments/assets/876d9b1a-d56e-4d8d-b00f-cf10b3b456b0" alt="Logo" width="400" height="400">
   </a>
 
   <h3 align="center">Reliable and Explainable Brain Tumor Segmentation</h3>
