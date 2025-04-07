@@ -51,7 +51,7 @@
 
 Brain tumor segmentation is a challenging task requiring radiologists to manually analyze MRI scans. This project aims to develop a robust, explainable AI model for brain tumor segmentation, addressing challenges such as:
 - Large 3D image sizes and multi-modal MRI data
-- Multi-label segmentation complexity
+- Multi-class segmentation complexity
 - Data scarcity and privacy concerns
 - Model robustness and adversarial training
 - Explainability for clinical trustworthiness
