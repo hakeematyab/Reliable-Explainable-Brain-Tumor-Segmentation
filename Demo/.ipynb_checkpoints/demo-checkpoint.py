@@ -249,14 +249,22 @@ colors = ['black', 'red', 'green', 'yellow']
 tumor_cmap = ListedColormap(colors)
 label_names = ['Background', 'Necrotic Core', 'Edema', 'Enhancing Tumor']
 
-def visualize_prediction(data, pred, mask, idx, modality=0, slice_num=3, save_path=None):
+MODALITY_MAP = {
+    'FLAIR': 0,
+    'T1': 1,
+    'T1CE': 2,
+    'T2': 3
+}
+def visualize_prediction(data, pred, mask, idx, modality_name, slice_num=3, save_path=None):
+    modality_idx = MODALITY_MAP.get(modality_name)
+   
     fig = plt.figure(figsize=(16, 6))
     gs = gridspec.GridSpec(1, 4, width_ratios=[1, 1, 1, 0.05])
     
     ax0 = plt.subplot(gs[0])
-    scan = data[idx, slice_num,...].cpu().numpy()
+    scan = data[idx, modality_idx,...].cpu().numpy()
     im0 = ax0.imshow(scan, cmap="bone")
-    ax0.set_title(f"Input: Modality {modality}", fontsize=14, fontweight='bold')
+    ax0.set_title(f"Modality: {modality_name}", fontsize=14, fontweight='bold')
     ax0.axis('off')
     
     ax1 = plt.subplot(gs[1])
@@ -277,37 +285,36 @@ def visualize_prediction(data, pred, mask, idx, modality=0, slice_num=3, save_pa
     plt.tight_layout()
     
     if save_path:
-        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+       plt.savefig(save_path, dpi=300, bbox_inches='tight')
+    
     return fig
 
 os.makedirs('Outputs', exist_ok=True)
 num_outputs = 3
 
 for i in range(num_outputs):
-    data, masks = next(iter(test_dataloader))
-    data = data.reshape(data.shape[0], -1, data.shape[-2], data.shape[-1])
-    model.eval()
-    with torch.no_grad():
-        logits = model(data.to(device))
-    
-    probs = torch.softmax(logits, dim=1)
-    preds = torch.argmax(logits, dim=1)
-    idx = np.random.randint(preds.shape[0])
-    
-    modality = 0 
-    slice_num = 3
-    scan = data[idx, slice_num,...].cpu().numpy()
-    pred = preds[idx].cpu().numpy()
-    mask = masks[idx].cpu().numpy()
-    
-    visualize_prediction(
-        data=data, 
-        pred=pred, 
-        mask=mask, 
-        idx=idx,
-        modality=modality, 
-        slice_num=slice_num,
-        save_path=f'Outputs/Inference_{i}.png'
-    )
-
+   data, masks = next(iter(test_dataloader))
+   data = data.reshape(data.shape[0], -1, data.shape[-2], data.shape[-1])
+   model.eval()
+   with torch.no_grad():
+       logits = model(data.to(device))
+   
+   probs = torch.softmax(logits, dim=1)
+   preds = torch.argmax(logits, dim=1)
+   idx = np.random.randint(preds.shape[0])
+   
+   modality = 'T1'
+   slice_num = 3
+   pred = preds[idx].cpu().numpy()
+   mask = masks[idx].cpu().numpy()
+   
+   visualize_prediction(
+       data=data, 
+       pred=pred, 
+       mask=mask, 
+       idx=idx,
+       modality_name=modality,
+       slice_num=slice_num,
+       save_path=f'Outputs/Inference_{i}_{modality}.png'
+   )
 print('Inference completed. Outputs saved at `Ouputs` directory.')
