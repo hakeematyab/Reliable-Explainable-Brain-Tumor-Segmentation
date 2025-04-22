@@ -25,7 +25,6 @@ Demo/
 2. Activate the environment
    ```sh
     conda activate BTSeg
-    pip install -r requirements.txt
    ```
 3. Install dependencies
    ```sh
