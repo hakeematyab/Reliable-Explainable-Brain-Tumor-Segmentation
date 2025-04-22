@@ -11,7 +11,7 @@ Demo/
 ├── demo.py
 ├── Demo.ipynb
 ├── requirements.txt
-├── environment.yml
+├── environment.yaml
 └── README.md
 ```
 
