@@ -62,6 +62,21 @@ Brain tumor segmentation is a challenging task requiring radiologists to manuall
 - **Adversarial training** for robustness
 - **Grad-CAM and attention scores** for model explainability
 
+## Results
+
+![Inference_2](https://github.com/user-attachments/assets/96350615-e8b5-43c0-bd20-9697e9eb42bd)
+
+### Model: Attention UNet
+
+| Metric       | Value     |
+|--------------|-----------|
+| Accuracy     | 0.99405   |
+| Prediction   | 0.893865  |
+| Recall       | 0.895307  |
+| F1 Score     | 0.894494  |
+| Dice Score   | 0.773027  |
+
+
 <!-- GETTING STARTED -->
 ## Getting Started
 
