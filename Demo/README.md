@@ -9,6 +9,7 @@ Demo/
 │   └── model.json
 ├── Data/
 ├── demo.py
+├── Demo.ipynb
 ├── requirements.txt
 ├── environment.yml
 └── README.md
