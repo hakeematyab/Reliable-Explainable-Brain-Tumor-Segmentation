@@ -32,6 +32,8 @@ Demo/
    ```sh
     python demo.py
    ```
+The model outputs will be saved in the `Outputs` directory.
+
 **Note** 
 - GPU is needed to run the inference in reasonable time.
 - If depencies missing, please install using `pip install module_name`.
