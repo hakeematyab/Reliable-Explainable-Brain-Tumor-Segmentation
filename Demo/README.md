@@ -18,7 +18,7 @@ Demo/
 ### Steps
 1. Create an environment
    ```sh
-    conda env create -f environment.yml
+    conda env create -f environment.yaml
    ```
 2. Activate the environment
    ```sh
