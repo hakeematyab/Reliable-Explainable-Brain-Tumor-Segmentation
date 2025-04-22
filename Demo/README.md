@@ -19,12 +19,12 @@ Demo/
 1. Create an environment
    ```sh
     conda env create -f environment.yml
-    conda activate AuditpulseBackend
+    conda activate BTSeg
     pip install -r requirements.txt
    ```
 2. Activate the environment
    ```sh
-    conda activate AuditpulseBackend
+    conda activate BTSeg
     pip install -r requirements.txt
    ```
 3. Install dependencies
