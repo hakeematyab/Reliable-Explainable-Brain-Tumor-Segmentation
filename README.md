@@ -63,8 +63,9 @@ Brain tumor segmentation is a challenging task requiring radiologists to manuall
 - **Grad-CAM and attention scores** for model explainability
 
 ## Results
+![Inference_1_T1](https://github.com/user-attachments/assets/0e876fca-68df-4914-8ebf-761a7f206568)
 
-![Inference_2](https://github.com/user-attachments/assets/96350615-e8b5-43c0-bd20-9697e9eb42bd)
+
 
 ### Model: Attention UNet
 
